@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Soccer Master</title>
+        <meta name="description" content="Soccer Master game">
+
+        <!-- Viewport, CSS and Canvas -->
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/app.css">
+        
+
+        <!-- Libraries -->
+        <link rel="prefetch" type="application/l10n" href="data/locales.ini"/>
+    </head>
+
+    <!-- Body -->    
+    <body>
+        <canvas id="gameCanvas"></canvas>
+        
+        <img id="foot" src="assets/foot60x30.png" width="60" height="30" alt="foot" hidden="true">
+        <img id="ball" src="assets/ball40x40.png" width="40" height="40" alt="ball" hidden="true">
+        <img id="bg" src="assets/groundGrass.png" width="canvas.width" height="canvas.height" alt="bg">
+        <img id="menubg" src="assets/SoccerMaster_MainMenu_v1.png" width="canvas.width" height="canvas.height" alt="menubg">
+
+        <script type="text/javascript" src="js/app.js" defer></script>
+        <script type="text/javascript" src="js/libs/l10n.js" defer></script>
+    </body>
+</html>
