@@ -23,6 +23,7 @@ window.addEventListener('DOMContentLoaded', function () {
   var footRadius = footSize / 2;
   var footVelocity = 10;
   var footMoveLeftFlag, footMoveRightFlag;
+  var footOutOfBoundsLeftFlag, footOutOfBoundsRightFlag;
 
   //Ball vars
   var ball = document.getElementById('ball');
@@ -72,7 +73,7 @@ window.addEventListener('DOMContentLoaded', function () {
       updatePositions();
       updateScreen();
     }
-    consoleGameState();
+    //consoleGameState();
   }
 
   // =================== GAME FUNCTIONS ============================= 
@@ -119,6 +120,9 @@ window.addEventListener('DOMContentLoaded', function () {
         if(gameEnded)
           playAgainFlag = true;
         break;
+      case '0':
+        localStorage.highScore = 0;
+        highScore = 0;
       default:
         console.log(e);
         break;
@@ -211,10 +215,26 @@ window.addEventListener('DOMContentLoaded', function () {
     ballPositionX = ballPositionX + ballVelocityX;
   }
 
+  function checkFootOutOfBounds(){
+    if((footPositionX-footRadius) <= 0){
+      footOutOfBoundsLeftFlag = true;
+    }else{
+      footOutOfBoundsLeftFlag = false;
+    }
+    console.log("left: "+(footPositionX-footRadius));
+    if((footPositionX+footRadius) >= canvasW){
+      footOutOfBoundsRightFlag = true;
+    }else{
+      footOutOfBoundsRightFlag = false;
+    }
+    console.log("right: "+(footPositionX-footRadius)+" canvas: "+canvasW);
+  }
+
   function footPositionCalc() {
-    if (footMoveRightFlag)
+    checkFootOutOfBounds();
+    if (footMoveRightFlag && !footOutOfBoundsRightFlag)
       footPositionX = footPositionX + footVelocity;
-    if (footMoveLeftFlag)
+    if (footMoveLeftFlag && !footOutOfBoundsLeftFlag)
       footPositionX = footPositionX - footVelocity;
   }
 
@@ -271,6 +291,11 @@ window.addEventListener('DOMContentLoaded', function () {
   }
 
   function updateInfo() {
+    if(localStorage.highScore > highScore){
+      highScore = localStorage.highScore;
+    }else{
+      localStorage.highScore = highScore;
+    }
     if (currentScore > highScore) {
       highScore = currentScore;
     }

@@ -1,7 +1,7 @@
 {
   "version": "0.2.0",
   "name": "SoccerMaster",
-  "description": "Demonstrates how to use permissions to load remote content",
+  "description": "SoccerMaster game for Kaios, developed by IsoForce Games",
   "launch_path": "/index.html",
   "icons": {
     "16": "/img/icons/icon16x16.png",
@@ -10,18 +10,9 @@
     "128": "/img/icons/icon128x128.png"
   },
   "developer": {
-    "name": "Your name",
-    "url": "http://example.com"
+    "name": "IsoForce Games",
+    "url": "https://isoforcegames.com/"
   },
-  "type": "privileged",
-  "permissions": {
-    "systemXHR": {
-      "description": "Required to load remote content"
-    }
-  },
-  "installs_allowed_from": [
-    "*"
-  ],
   "locales": {
     "es": {
       "name": "Aplicación privilegiada",
