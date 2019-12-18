@@ -2,6 +2,7 @@
 // but without waiting for other external resources to load (css/images/etc)
 // That makes the app more responsive and perceived as faster.
 // https://developer.mozilla.org/Web/Reference/Events/DOMContentLoaded
+
 window.addEventListener('DOMContentLoaded', function () {
 
   navigator.mozL10n.once(start);
@@ -48,6 +49,7 @@ window.addEventListener('DOMContentLoaded', function () {
   function start() {
     document.activeElement.addEventListener('keydown', handleKeydown);
     document.activeElement.addEventListener('keyup', handleKeyup);
+    
     setInterval(mainLoop, 30);
 
   }
@@ -69,6 +71,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if (gameEnded) {
       updateInfo();
       updateMenu();
+      console.log("width: "+canvasW+", height: "+canvasH);
     } else {
       updatePositions();
       updateScreen();
@@ -124,7 +127,7 @@ window.addEventListener('DOMContentLoaded', function () {
         localStorage.highScore = 0;
         highScore = 0;
       default:
-        console.log(e);
+        //console.log(e);
         break;
     }
   }
@@ -149,7 +152,7 @@ window.addEventListener('DOMContentLoaded', function () {
         playAgainFlag = false;
         break;
       default:
-        console.log(e);
+        //console.log(e);
         break;
     }
   }
@@ -221,13 +224,13 @@ window.addEventListener('DOMContentLoaded', function () {
     }else{
       footOutOfBoundsLeftFlag = false;
     }
-    console.log("left: "+(footPositionX-footRadius));
+    //console.log("left: "+(footPositionX-footRadius));
     if((footPositionX+footRadius) >= canvasW){
       footOutOfBoundsRightFlag = true;
     }else{
       footOutOfBoundsRightFlag = false;
     }
-    console.log("right: "+(footPositionX-footRadius)+" canvas: "+canvasW);
+    //console.log("right: "+(footPositionX-footRadius)+" canvas: "+canvasW);
   }
 
   function footPositionCalc() {
