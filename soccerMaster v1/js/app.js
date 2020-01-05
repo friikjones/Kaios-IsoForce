@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', function () {
   function start() {
     addMenuListeners();
     console.log("HERE");
+    LoadAdver();
     setInterval(mainLoop, 30);
   }
 
@@ -23,15 +24,15 @@ window.addEventListener('DOMContentLoaded', function () {
         InputHandlingMenu();
         UpdateScreenMenu();
         break;
+      case state.INTER:
+        UpdateScreenInter();
+        break;
       case state.GAME:
         InputHandlingGame();
         UpdateScreenGame();
         break;
-      case state.INTER:
-        UpdateScreenInter();
-        break;
-      case state.END:
-        // InputHandlingEnd()
+      case state.ADVER:
+        RunAdver();
         // UpdateScreenEnd()
         break;
       default:

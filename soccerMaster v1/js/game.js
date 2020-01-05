@@ -67,7 +67,7 @@ function UpdateScreenGame() {
     drawScore();
 
     if (gameEnded) {
-        nextState = state.MENU;
+        nextState = state.ADVER;
         stateChangedFlag = true;
         console.log("KEY next state: " + nextState);
         resetGamePositions();

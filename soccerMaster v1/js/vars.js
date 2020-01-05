@@ -12,11 +12,10 @@ var canvasH = canvas.height;
 
 //Game State Manager vars
 const state = {
-    LANDING: 'landing',
     MENU: 'menu',
     INTER: 'inter',
     GAME: 'game',
-    END: 'end'
+    ADVER: 'adver'
     //Any other state should be added here
 }
 

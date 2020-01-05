@@ -1,28 +1,25 @@
 {
-  "version": "0.2.0",
+  "version": "1.0.0",
   "name": "SoccerMaster",
   "description": "SoccerMaster game for Kaios, developed by IsoForce Games",
+  "type": "web",
   "launch_path": "/index.html",
   "icons": {
-    "16": "/img/icons/icon16x16.png",
-    "48": "/img/icons/icon48x48.png",
-    "60": "/img/icons/icon60x60.png",
-    "128": "/img/icons/icon128x128.png"
+    "56": "/assets/_Icon_56X56/_Icon_56X56_SoccerMaster.png",
+    "112": "/assets/_Icon_112X112/_Icon_112X112_SoccerMaster.png"
   },
+  "fullscreen": "true",
+  "orientation": [ "portrait" ],
   "developer": {
     "name": "IsoForce Games",
     "url": "https://isoforcegames.com/"
   },
   "locales": {
-    "es": {
-      "name": "Aplicación privilegiada",
-      "description": "Demuestra cómo utilizar permisos para cargar contenido remoto",
-      "permissions": {
-        "systemXHR": {
-          "description": "Requerido para cargar contenido remoto"
-        }
-      }
+    "en-US": {
+      "name": "SoccerMaster",
+      "subtitle": "Do you got what it takes to become a soccer master?",
+      "description": "A game where you juggle the ball like a pro, and try to become a soccer master!"
     }
   },
-  "default_locale": "en"
+  "default_locale": "en-US"
 }
