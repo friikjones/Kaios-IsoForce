@@ -77,6 +77,9 @@ function updateListeners(){
         case state.END:
             removeEndListeners();
           break;
+        case state.ADVER:
+            removeAdverListeners();
+            break;
         default:
           break;
       }
@@ -90,6 +93,9 @@ function updateListeners(){
         case state.END:
             addEndListeners();
           break;
+        case state.ADVER:
+            addAdverListeners();
+            break;
         default:
           break;
     }
@@ -125,4 +131,14 @@ function addEndListeners(){
 function removeEndListeners(){
     console.log("removing end listeners");
     document.activeElement.removeEventListener('keydown', handleKeydownEnd);
+}
+
+function addAdverListeners(){
+    console.log("adding end listeners");
+    document.activeElement.addEventListener('keydown', handleKeydownAdver);
+}
+
+function removeAdverListeners(){
+    console.log("removing end listeners");
+    document.activeElement.removeEventListener('keydown', handleKeydownAdver);
 }

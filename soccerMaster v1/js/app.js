@@ -11,7 +11,6 @@ window.addEventListener('DOMContentLoaded', function () {
   function start() {
     addMenuListeners();
     console.log("HERE");
-    LoadAdver();
     setInterval(mainLoop, 30);
   }
 
@@ -32,8 +31,8 @@ window.addEventListener('DOMContentLoaded', function () {
         UpdateScreenGame();
         break;
       case state.ADVER:
-        RunAdver();
-        // UpdateScreenEnd()
+        DisplayAdver();
+        UpdateAdverScreen();
         break;
       default:
         //exception handling

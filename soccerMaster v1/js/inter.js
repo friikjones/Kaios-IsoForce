@@ -36,9 +36,6 @@ function UpdateScreenInter() {
     }
     
 
-
-
-
     if (countdownEnded) {
         nextState = state.GAME;
         stateChangedFlag = true;
